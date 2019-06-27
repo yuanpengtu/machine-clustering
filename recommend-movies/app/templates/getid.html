@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="jumbotron text-center">
+  <div class="container">
+    <a href="/" class="lang-logo">
+      <img src="{% static 'lang-logo.png'%}">
+    </a>
+    <h1>Movie Recommeder System</h1>
+    <p>Please enter your id</p>
+    <form method="post">{% csrf_token %}
+    <link href='http://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
+        <div class="form-group ">
+          <label for="userid">Id:</label>
+          <input type="text" class="form-control" name ="userid" id = 'userid'/>
+        </div>
+        <button type="submit" class="form-control btn btn-lg btn-primary"><span class="glyphicon glyphicon-flash"></span> Submit</button>
+    </form>
+  </div>
+</div>
+<div class="container">
+  <div class="alert alert-info text-center" role="alert">
+    Please enter your id. (Temporary. Will change to take new users) <!-- TODO : Change when new users are allowed-->
+  </div>
+</div>
+{% endblock %}

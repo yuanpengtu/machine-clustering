@@ -1,0 +1,35 @@
+<!doctype html>
+<head>
+	<title> {{ title }} </title>
+	<meta charset="utf-8">
+	<link rel="icon" href="{{url_for('static', filename='logo.png')}}" type="image/gif" sizes="16x16"
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style> ul{ list-style-type: none;} </style>
+	<style> .body-container{ max-width: 30%; } </style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+<center>	
+	<div class="body-container">
+		<div class="jumbotron">	
+		 	<h3> {{ data.success }} </h3>
+		 	
+		 	<form method="post" enctype = "multipart/form-data">
+	   			<input class = "btn btn-primary" type="file" name="image" accept="image/*"><br>
+	  			<input class = "btn btn-primary" type="submit">
+	  		</form><br>
+	  		
+	  		<img src="static/img/{{ name }}" width="50%" height="40%" alt="{{ name }}">
+	    	{% for d in data.predictions %}
+	      		<h5> {{ d.label }} </h5> 
+	    	{% endfor %}
+	    </div>	
+	</div>
+</center>
+
+	
+</body>      
+</html>  

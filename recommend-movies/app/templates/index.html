@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="jumbotron text-center">
+  <div class="container">
+    <a href="/" class="lang-logo">
+      <img src="{% static 'lang-logo.png'%}">
+    </a>
+    <h1>Movie Recommeder System</h1>
+    <p>This is a movie recommender system built on django using the K-means clustering algorithm.It suggests movies that the user must watch next based on what movies similar users have liked.</p>
+    <a type="button" class="btn btn-lg btn-default" href="/id/"><span class="glyphicon glyphicon-flash"></span> Getting Started</a>
+    <a type="button" class="btn btn-lg btn-primary" href="https://github.com/AvaisP/recommend-movies"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
+  </div>
+</div>
+<div class="container">
+  <div class="alert alert-info text-center" role="alert">
+    To start using the recommender system click on the <a href="/id/" class="alert-link">Getting Started</a> button.
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-info-sign"></span> How this system works</h3>
+      <ul>
+        <li>This app takes user id as an input.</li>
+        <li>It then locates the clusters the user belongs to.</li>
+        <li>We then find similar users present in the cluster.</li>
+        <li>This is followed by recommending movies to the user from the movies rated by similar users present in the cluster.</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-link"></span> Issues</h3>
+      <ul>
+        <li>Right now, the app uses the K-means clustering algorithm.</li>
+          <li>In the future we would like to move on to a collaborative filtering algorithm for item-item similarity using the cosine similarity function.</li>
+          <li>It doesn't let new users join. That is there is  no way to recommend movies to a user without a history.</li>
+          <li>It doesn't work on real time data.</li>
+      </ul>
+    </div>
+  </div> <!-- row -->
+   <div class="alert alert-info text-center" role="alert">
+    Please keep the issues in mind before using the app. You can work on the issues and submit a fork.
+  </div>
+</div>
+{% endblock %}
