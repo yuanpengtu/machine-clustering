@@ -3,7 +3,7 @@ Django==1.9.2
 gunicorn==19.4.5
 psycopg2==2.6.1
 whitenoise==2.0.6
-numpy==1.9.2
+numpy==1.22.0
 scikit-learn==0.17.1
 pandas==0.18.1
 scipy==0.15.1
